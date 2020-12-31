@@ -5,6 +5,7 @@ import (
 	"testing"
 )
 
+var key = "yilan"
 var str = "hello123"
 
 func TestMD5(t *testing.T) {
@@ -24,5 +25,10 @@ func TestSHA256(t *testing.T) {
 
 func TestSHA512(t *testing.T) {
 	ret, err := SHA512(str)
+	fmt.Println(ret, err)
+}
+
+func TestHashMac(t *testing.T) {
+	ret, err := HMac256(key, str)
 	fmt.Println(ret, err)
 }

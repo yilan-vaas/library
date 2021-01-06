@@ -46,7 +46,7 @@ func SHA512(str string) (s string, err error) {
 }
 
 //HashMac
-func HMac256(key, str string) (s string, err error) {
+func HMac256(str, key string) (s string, err error) {
 	h := hmac.New(sha256.New, []byte(key))
 	if _, err = h.Write([]byte(str)); err == nil {
 		return hex.EncodeToString(h.Sum(nil)), nil

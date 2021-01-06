@@ -29,6 +29,6 @@ func TestSHA512(t *testing.T) {
 }
 
 func TestHashMac(t *testing.T) {
-	ret, err := HMac256(key, str)
+	ret, err := HMac256(str, key)
 	fmt.Println(ret, err)
 }

@@ -30,7 +30,7 @@ func RSAEncrypt(data, pubKey string) (str string, err error) {
 }
 
 // 解密
-func RASDecrypt(str, priKey string) (data string, err error) {
+func RSADecrypt(str, priKey string) (data string, err error) {
 	block, _ := pem.Decode([]byte(priKey))
 	if block == nil {
 		return "", errors.New("private key error")

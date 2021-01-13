@@ -28,6 +28,11 @@ func TestSHA512(t *testing.T) {
 	fmt.Println(ret, err)
 }
 
+func TestCRC32(t *testing.T) {
+	ret := CRC32(str)
+	fmt.Println(ret)
+}
+
 func TestHashMac(t *testing.T) {
 	ret, err := HMac256(str, key)
 	fmt.Println(ret, err)

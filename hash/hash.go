@@ -7,6 +7,7 @@ import (
 	"crypto/sha256"
 	"crypto/sha512"
 	"encoding/hex"
+	"hash/crc32"
 )
 
 //MD5
@@ -43,6 +44,11 @@ func SHA512(str string) (s string, err error) {
 		return hex.EncodeToString(h.Sum(nil)), nil
 	}
 	return
+}
+
+//CRC32
+func CRC32(str string) uint32 {
+	return crc32.ChecksumIEEE([]byte(str))
 }
 
 //HashMac

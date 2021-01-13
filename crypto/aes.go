@@ -8,7 +8,7 @@ import (
 )
 
 //AES Encrypt
-func AesEncrypt(data, secret string) (str string, err error) {
+func AESEncrypt(data, secret string) (str string, err error) {
 	key := []byte(secret)
 	origData := []byte(data)
 	block, err := aes.NewCipher(key)
@@ -25,7 +25,7 @@ func AesEncrypt(data, secret string) (str string, err error) {
 }
 
 //AES Decrypt
-func AesDecrypt(data, secret string) (str string, err error) {
+func AESDecrypt(data, secret string) (str string, err error) {
 	key := []byte(secret)
 	decode, err := base64.StdEncoding.DecodeString(data)
 	crypted := []byte(decode)

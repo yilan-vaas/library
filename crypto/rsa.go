@@ -10,8 +10,10 @@ import (
 )
 
 //错误定义
-var pubKeyErr error = errors.New("public key error")
-var priKeyErr error = errors.New("private key error")
+var (
+	pubKeyErr error = errors.New("public key error")
+	priKeyErr error = errors.New("private key error")
+)
 
 //RSA Encrypt
 func RSAEncrypt(data, pubKey []byte) ([]byte, error) {

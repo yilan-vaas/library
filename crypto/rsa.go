@@ -48,25 +48,19 @@ func RSADecrypt(cipher, priKey []byte) ([]byte, error) {
 
 //RSA Encrypt With Base64
 func RSAEncryptStr(data, pubKey string) (string, error) {
-	str := ""
 	ret, err := RSAEncrypt([]byte(data), []byte(pubKey))
-	if err == nil {
-		str = base64.StdEncoding.EncodeToString(ret)
-	}
+	str := base64.StdEncoding.EncodeToString(ret)
 	return str, err
 }
 
 //RSA Decrypt With Base64
 func RSADecryptStr(str, priKey string) (string, error) {
-	data := ""
 	oriData, err := base64.StdEncoding.DecodeString(str)
 	if err != nil {
-		return data, err
+		return "", err
 	}
 
 	ret, err := RSADecrypt(oriData, []byte(priKey))
-	if err == nil {
-		data = string(ret)
-	}
+	data := string(ret)
 	return data, err
 }

@@ -7,14 +7,13 @@ import (
 	"github.com/speps/go-hashids"
 )
 
-const (
-	MIN_LEN int = 12
-)
+//最短长度
+var minLen int = 12
 
 func EncodeHash(id int64, salt string) (string, error) {
 	hd := hashids.NewData()
 	hd.Salt = salt
-	hd.MinLength = MIN_LEN
+	hd.MinLength = minLen
 	hash, err := hashids.NewWithData(hd)
 	if err != nil {
 		return "", fmt.Errorf("encode hash err: %s", err)
@@ -36,7 +35,7 @@ func DecodeHash(str, salt string) (int64, error) {
 
 	hd := hashids.NewData()
 	hd.Salt = salt
-	hd.MinLength = MIN_LEN
+	hd.MinLength = minLen
 	hash, err := hashids.NewWithData(hd)
 	if err != nil {
 		return 0, fmt.Errorf("decode hash err: %s", err)

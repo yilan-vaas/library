@@ -6,7 +6,7 @@ import (
 )
 
 var key = "yilan"
-var str = "hello123"
+var str = "hello123hello123hello123hello123hello123hello123hello123hello123hello123hello123hello123hello123hello123hello123hello123hello123"
 
 func TestMD5(t *testing.T) {
 	ret, err := MD5(str)

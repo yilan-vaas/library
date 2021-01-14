@@ -7,7 +7,7 @@ import (
 	"encoding/base64"
 )
 
-//AES Encrypt
+//AES Encrypt CBC Mode
 func AESEncrypt(data, secret string) (str string, err error) {
 	key := []byte(secret)
 	origData := []byte(data)
@@ -24,7 +24,7 @@ func AESEncrypt(data, secret string) (str string, err error) {
 	return
 }
 
-//AES Decrypt
+//AES Decrypt CBC Mode
 func AESDecrypt(data, secret string) (str string, err error) {
 	key := []byte(secret)
 	decode, err := base64.StdEncoding.DecodeString(data)

@@ -49,7 +49,7 @@ func TestHash(t *testing.T) {
 }
 
 func TestRSA(t *testing.T) {
-	ret, err := RSAEncrypt(str, pubKey)
-	data, err := RSADecrypt(ret, priKey)
+	ret, err := RSAEncryptStr(str, pubKey)
+	data, err := RSADecryptStr(ret, priKey)
 	fmt.Println(ret, data, err)
 }

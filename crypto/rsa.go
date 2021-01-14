@@ -9,7 +9,7 @@ import (
 	"errors"
 )
 
-//错误定义
+//errors define
 var (
 	pubKeyErr error = errors.New("public key error")
 	priKeyErr error = errors.New("private key error")
@@ -46,7 +46,7 @@ func RSADecrypt(cipher, priKey []byte) ([]byte, error) {
 	return rsa.DecryptPKCS1v15(rand.Reader, priv, cipher)
 }
 
-//RSA Decrypt With Base64
+//RSA Encrypt With Base64
 func RSAEncryptStr(data, pubKey string) (string, error) {
 	str := ""
 	ret, err := RSAEncrypt([]byte(data), []byte(pubKey))

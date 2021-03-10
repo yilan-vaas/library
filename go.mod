@@ -1,4 +1,4 @@
-module library
+module github.com/yilan-vaas/library
 
 go 1.13
 
